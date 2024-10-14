@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        #tituloNoticia {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        #descripcionNoticia {
+            font-size: 20px;
+        }
+
+        .text-link {
+            color: #09ff00; /* Color del enlace */
+            font-size: 20px;
+            font-weight: bold; /* Peso normal para el texto */
+            cursor: pointer; /* Cursor de mano al pasar el ratón */
+            transition: color 0.3s ease, text-shadow 0.3s ease; /* Transiciones suaves para el cambio de color y sombra */
+        }
+
+        .text-link:hover {
+            color: #0056b3; /* Color más oscuro al pasar el ratón */
+            text-decoration: underline; /* Subrayado al pasar el ratón */
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Sombra sutil para darle profundidad */
+        }
+
+        .col-md-4 {
+            background-color: #ff0000; /* Color de fondo claro */
+            border: 1px solid #ffffff; /* Borde gris claro */
+            border-radius: 8px; /* Bordes redondeados */
+            padding: 15px; /* Relleno interno */
+            margin-top: 20px; /* Espacio superior */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+<header class="custom-header text-dark py-3 bg-light">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <!-- Logo -->
+            <a class="navbar-brand" href="paginaPrincipal.html">
+                <h1 class="m-0">Coop Design</h1>
+            </a>
+
+            <!-- Botones minimalistas para Home, Galería e Iniciar sesión -->
+            <div class="d-flex">
+                <a href="paginaPrincipal.html" class="btn btn-outline-dark me-2">Home</a>
+                <a href="galeria.html" class="btn btn-outline-dark me-2">Galería</a>
+                <a href="iniciarSesion.html" class="btn btn-outline-dark">Iniciar Sesión</a>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Fin Header -->
+
+    <div class="container-fluid my-5">
+        <h1 id="tituloNoticia">Titulo de Noticia: Este es un ejemplo de un Titulo Largo a lo TN</h1>
+        <br>
+        <br>
+        <p id="descripcionNoticia" name="descripcionNoticia">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas impedit repellat 
+            accusantium, excepturi minus suscipit velit architecto molestiae porro, sapiente doloremque officia.
+            Nihil ipsam ipsum iusto nam eaque ab fugit?</p>
+        
+        <div class="row">
+            <!-- Aca podria ir el texto de la noticia -->
+            <div class="col-md-8">
+                <p id="descripcionNoticia" name="descripcionNoticia">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, ducimus. 
+                    Omnis exercitationem quidem delectus sunt recusandae, non dicta quod laudantium sapiente corporis a repellendus aliquam in maiores, 
+                    atque voluptatem? Sed.</p>
+                <p id="descripcionNoticia" name="descripcionNoticia">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, ducimus. 
+                    Omnis exercitationem quidem delectus sunt recusandae, non dicta quod laudantium sapiente corporis a repellendus aliquam in maiores, 
+                    atque voluptatem? Sed.</p>
+                <p id="descripcionNoticia" name="descripcionNoticia">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, ducimus. 
+                    Omnis exercitationem quidem delectus sunt recusandae, non dicta quod laudantium sapiente corporis a repellendus aliquam in maiores, 
+                    atque voluptatem? Sed.</p>
+            </div>
+            
+            <!-- Aca hay una especie de columna con botones -->
+            <div class="col-md-4">
+                <a href="paginaPrincipal.html" class="text-link">Noticia Importante numero 1</a><br>
+                <a href="galeria.html" class="text-link">Noticia No tan importante numero 2</a><br>
+                <a href="iniciarSesion.html" class="text-link">Noticia Amarillista numero 3</a><br>
+                <a href="iniciarSesion.html" class="text-link">Laura esta a 5km de tu ubicacion ¡Click Aqui!</a><br>
+            </div>
+        </div>
+    </div>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white text-center py-4">
+            <div class="container">
+                <h5>¡Seguinos en Instagram!</h5>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/tecnica6moron_oficial/?hl=es" class="text-white mx-2" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <hr class="my-4" />
+                <p>Contacto: <a href="mailto:example123@gmail.com" class="text-white">example123@gmail.com</a></p>
+                <p>&copy; 2024 Coop Design. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+        <!-- Fin Footer -->
+</body>
+</html>
