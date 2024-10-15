@@ -23,35 +23,27 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
     <link rel="icon" href="img/LogoChaca.png" type="image/x-icon">
     
     <style>
-        html, body {
-            height: 100%; /* Asegura que el body ocupe toda la altura */
-            margin: 0; /* Elimina márgenes por defecto */
-            display: flex;
-            flex-direction: column; /* Establece la dirección del flex en columna */
-        }
-
-        .container {
-            flex: 1; /* Esto permitirá que el contenedor principal ocupe el espacio restante */
-        }
-
-        /* Espacio personalizado entre filas de imágenes */
-        .row {
-            margin-bottom: 30px; /* Ajusta este valor para controlar el espacio */
-        }
         .hovereffect {
             position: relative;
-            overflow: hidden;
+            overflow: hidden; /* Mantiene el contenido dentro de los límites del contenedor */
+            height: 300px; /* Ajusta la altura del contenedor a un valor fijo, puedes cambiarlo según necesites */
         }
+
         .hovereffect img {
-            display: block;
+            position: absolute; /* Permite posicionar la imagen en relación al contenedor */
+            top: 50%; /* Centrar verticalmente */
+            left: 50%; /* Centrar horizontalmente */
+            transform: translate(-50%, -50%); /* Ajuste para centrar la imagen */
+            width: auto; /* Mantener el ancho automático */
+            height: 100%; /* Ajustar la altura al 100% del contenedor */
             transition: transform 0.3s ease; /* Para el zoom */
-            width: 100%; /* Asegura que la imagen ocupe el ancho completo */
-            height: auto; /* Mantiene la relación de aspecto */
+            cursor: pointer; /* Cambia el cursor a puntero para indicar que es clickeable */
         }
+
         .hovereffect:hover img {
-            transform: scale(1.1); /* Zoom al pasar el cursor */
-            filter: blur(2px); /* Aplicar efecto difuminado */
+            transform: translate(-50%, -50%) scale(1.1); /* Aumentar el tamaño de la imagen al pasar el cursor */
         }
+
         .overlay {
             position: absolute;
             top: 0;
@@ -64,15 +56,24 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
             display: flex; /* Usar flexbox para centrar el texto */
             justify-content: center; /* Centrar horizontalmente */
             align-items: center; /* Centrar verticalmente */
+            pointer-events: none; /* No bloquear eventos de clic */
         }
+
         .hovereffect:hover .overlay {
             opacity: 1; /* Mostrar overlay al pasar el cursor */
         }
+
         .overlay h2 {
             color: white; /* Color del texto */
             font-size: 24px; /* Tamaño de fuente */
             text-align: center; /* Centrar el texto */
             margin: 0; /* Sin margen */
+        }
+        .modal-body img {
+            width: 100%; /* Ajusta el ancho al 100% del modal */
+            height: auto; /* Mantiene la relación de aspecto */
+            max-height: 100%; /* Asegura que no sobrepase la altura del modal */
+            object-fit: cover; /* Cubre el contenedor, recortando si es necesario */
         }
     </style>
     
@@ -83,6 +84,12 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
             if (confirm('¿Estás seguro de que deseas eliminar esta foto?')) {
                 document.getElementById('form-eliminar-' + index).submit();
             }
+        }
+
+        // Función para establecer la imagen en el modal
+        function setModalImage(imageSrc, description) {
+            document.getElementById('modalImage').src = imageSrc; // Establecer la fuente de la imagen
+            document.getElementById('imageModalLabel').textContent = description; // Establecer la descripción
         }
     </script>
 </head>
@@ -97,9 +104,6 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
             </a>
             <div class="d-flex">
                 <a href="paginaPrincipal.php" class="btn btn-outline-dark me-2">Página Principal</a>
-                <?php if ($isAdmin): ?>
-                    <a href="agregarFoto.php" class="btn btn-outline-dark me-2">Agregar Foto</a>
-                <?php endif; ?>
                 <?php if (isset($_SESSION['role'])): ?>
                     <a href="cerrarSesion.php" class="btn btn-outline-danger me-2">Cerrar Sesión</a>
                 <?php endif; ?>
@@ -113,7 +117,14 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
 <!-- Fin Header -->
 
 <div class="container">
+
     <h1 class="my-4 text-center">Galería de Fotos de Cooperadora</h1>
+    <?php if ($isAdmin): ?>
+    <div class="text-center mb-3"> <!-- Agregado div con clase text-center -->
+        <a href="agregarFoto.php" class="btn btn-dark">Agregar Foto</a>
+    </div>
+    <?php endif; ?>
+
     <div class="my-5"></div>
 
     <!-- Mostrar imágenes desde el archivo JSON -->
@@ -121,7 +132,15 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
         <?php foreach ($galeria as $index => $foto): ?>
             <div class="col-md-4">
                 <div class="hovereffect">
-                    <img src="<?php echo $foto['imagen']; ?>" class="img-fluid" alt="<?php echo $foto['descripcion']; ?>">
+                    <img 
+                        src="<?php echo $foto['imagen']; ?>" 
+                        class="img-fluid" 
+                        alt="<?php echo $foto['descripcion']; ?>" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#imageModal"
+                        onclick="setModalImage('<?php echo $foto['imagen']; ?>', '<?php echo $foto['descripcion']; ?>')"
+                        style="object-fit: contain;"
+                        ><!--el style de aca hace que muestre toda la imagen, sin esto se muestra un poco estirada. Decision de cada quien dejarlo o no-->
                     <div class="overlay">
                         <h2><?php echo $foto['descripcion']; ?></h2>
                     </div>
@@ -135,6 +154,21 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
                 <?php endif; ?>
             </div>
         <?php endforeach; ?>
+    </div>
+</div>
+
+<!-- Modal para ampliar la imagen -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel">Imagen Ampliada</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" src="" class="img-fluid" alt="">
+            </div>
+        </div>
     </div>
 </div>
 

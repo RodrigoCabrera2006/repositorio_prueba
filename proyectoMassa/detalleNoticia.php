@@ -28,6 +28,7 @@ $noticia = $noticias[$index];
     <title><?php echo $noticia['titulo']; ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="img/LogoChaca.png" type="image/x-icon">
     <style>
         .image-container {
     text-align: center; /* Centra horizontalmente el contenido dentro del contenedor */
@@ -75,9 +76,8 @@ $noticia = $noticias[$index];
 
     <?php endif; ?>
 
-
     <!-- Mostrar los detalles solo si existen -->
-    <p style="font-size:30px;"><?php echo isset($noticia['detalles']) ? nl2br($noticia['detalles']) : 'No hay detalles adicionales para esta noticia.'; ?></p>
+    <p class="my-5" style="font-size:30px;"><?php echo isset($noticia['detalles']) ? nl2br($noticia['detalles']) : 'No hay detalles adicionales para esta noticia.'; ?></p>
 </div>
 
 <!-- Footer -->

@@ -19,6 +19,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
     <title>Noticias y Eventos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="img/LogoChaca.png" type="image/x-icon">
     <style>
         html, body {
             height: 100%; /* Asegura que el body ocupe toda la altura */
@@ -56,14 +57,12 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
             <div class="d-flex">
                 <a href="galeria.php" class="btn btn-outline-dark me-2">Galería</a>
                 <?php if ($isAdmin): ?>
-                    <a href="crearNoticia.php" class="btn btn-outline-dark me-2">Agregar Noticia</a>
+                    <a href="informacion.html" class="btn btn-outline-primary me-2">Como Utilizar la pagina siendo administrador?</a>
                 <?php endif; ?>
                 <?php if (isset($_SESSION['role'])): ?>
                     <a href="cerrarSesion.php" class="btn btn-outline-danger me-2">Cerrar Sesión</a>
                 <?php endif; ?>
-                <?php if ($isAdmin): ?>
-                    <a href="informacion.html" class="btn btn-outline-primary">Como Utilizar la pagina siendo administrador?</a>
-                <?php endif; ?>
+
             </div>
         </div>
     </div>
@@ -72,7 +71,11 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
 
 <div class="container">
     <h1 class="my-4 text-center">Noticias y Eventos</h1>
-    
+    <?php if ($isAdmin): ?>
+    <div class="text-center mb-3"> <!-- Contenedor centrado -->
+        <a href="crearNoticia.php" class="btn btn-dark">Agregar Noticia</a>
+    </div>
+    <?php endif; ?>
     <div class="row d-flex justify-content-center">
         <?php foreach ($noticias as $index => $noticia): ?>
             <div class="col-md-4 mb-4">
