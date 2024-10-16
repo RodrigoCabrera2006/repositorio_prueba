@@ -23,25 +23,27 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
     <link rel="icon" href="img/LogoChaca.png" type="image/x-icon">
     
     <style>
+        /* Estilos para el modo oscuro */
+
         .hovereffect {
             position: relative;
-            overflow: hidden; /* Mantiene el contenido dentro de los límites del contenedor */
-            height: 300px; /* Ajusta la altura del contenedor a un valor fijo, puedes cambiarlo según necesites */
+            overflow: hidden;
+            height: 300px;
         }
 
         .hovereffect img {
-            position: absolute; /* Permite posicionar la imagen en relación al contenedor */
-            top: 50%; /* Centrar verticalmente */
-            left: 50%; /* Centrar horizontalmente */
-            transform: translate(-50%, -50%); /* Ajuste para centrar la imagen */
-            width: auto; /* Mantener el ancho automático */
-            height: 100%; /* Ajustar la altura al 100% del contenedor */
-            transition: transform 0.3s ease; /* Para el zoom */
-            cursor: pointer; /* Cambia el cursor a puntero para indicar que es clickeable */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: auto;
+            height: 100%;
+            transition: transform 0.3s ease;
+            cursor: pointer;
         }
 
         .hovereffect:hover img {
-            transform: translate(-50%, -50%) scale(1.1); /* Aumentar el tamaño de la imagen al pasar el cursor */
+            transform: translate(-50%, -50%) scale(1.1);
         }
 
         .overlay {
@@ -50,30 +52,31 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente negro */
-            opacity: 0; /* Ocultar por defecto */
-            transition: opacity 0.3s ease; /* Transición suave para la opacidad */
-            display: flex; /* Usar flexbox para centrar el texto */
-            justify-content: center; /* Centrar horizontalmente */
-            align-items: center; /* Centrar verticalmente */
-            pointer-events: none; /* No bloquear eventos de clic */
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
         }
 
         .hovereffect:hover .overlay {
-            opacity: 1; /* Mostrar overlay al pasar el cursor */
+            opacity: 1;
         }
 
         .overlay h2 {
-            color: white; /* Color del texto */
-            font-size: 24px; /* Tamaño de fuente */
-            text-align: center; /* Centrar el texto */
-            margin: 0; /* Sin margen */
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            margin: 0;
         }
+
         .modal-body img {
-            width: 100%; /* Ajusta el ancho al 100% del modal */
-            height: auto; /* Mantiene la relación de aspecto */
-            max-height: 100%; /* Asegura que no sobrepase la altura del modal */
-            object-fit: cover; /* Cubre el contenedor, recortando si es necesario */
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: cover;
         }
     </style>
     
@@ -88,9 +91,12 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
 
         // Función para establecer la imagen en el modal
         function setModalImage(imageSrc, description) {
-            document.getElementById('modalImage').src = imageSrc; // Establecer la fuente de la imagen
-            document.getElementById('imageModalLabel').textContent = description; // Establecer la descripción
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('imageModalLabel').textContent = description;
         }
+
+
+
     </script>
 </head>
 <body>
@@ -110,6 +116,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
                 <?php if ($isAdmin): ?>
                     <a href="informacion.html" class="btn btn-outline-primary">Como Utilizar la pagina siendo administrador?</a>
                 <?php endif; ?>
+
             </div>
         </div>
     </div>
@@ -120,7 +127,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
 
     <h1 class="my-4 text-center">Galería de Fotos de Cooperadora</h1>
     <?php if ($isAdmin): ?>
-    <div class="text-center mb-3"> <!-- Agregado div con clase text-center -->
+    <div class="text-center mb-3">
         <a href="agregarFoto.php" class="btn btn-dark">Agregar Foto</a>
     </div>
     <?php endif; ?>
@@ -140,7 +147,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
                         data-bs-target="#imageModal"
                         onclick="setModalImage('<?php echo $foto['imagen']; ?>', '<?php echo $foto['descripcion']; ?>')"
                         style="object-fit: contain;"
-                        ><!--el style de aca hace que muestre toda la imagen, sin esto se muestra un poco estirada. Decision de cada quien dejarlo o no-->
+                    >
                     <div class="overlay">
                         <h2><?php echo $foto['descripcion']; ?></h2>
                     </div>
