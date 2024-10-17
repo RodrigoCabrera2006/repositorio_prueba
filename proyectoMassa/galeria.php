@@ -23,7 +23,20 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
     <link rel="icon" href="img/LogoChaca.png" type="image/x-icon">
     
     <style>
-        /* Estilos para el modo oscuro */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            flex-grow: 1;
+        }
 
         .hovereffect {
             position: relative;
@@ -78,31 +91,32 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
             max-height: 100%;
             object-fit: cover;
         }
-         .custom-header{
+
+        .custom-header {
             background-color: #6a1f1f;
             color: #c0c0c0;
         }
-        footer{
-            min-height: 70px;
+
+        footer {
             background-color: #6a1f1f;
-            color: #c0c0c0; 
-            position:absolute;
-            bottom:0%;
-            width:100%;
-            
+            color: #c0c0c0;
+            padding: 20px 0;
+            text-align: center;
         }
-        .d-flex{
-            background-color: #6a1f1f;
-        }
-        a {
-            background-color: #6a1f1f;
-        }
-        .container1{
+
+        .d-flex {
             background-color: #6a1f1f;
         }
 
+        a {
+            background-color: #6a1f1f;
+        }
+
+        .container1 {
+            background-color: #6a1f1f;
+        }
     </style>
-    
+
     <script>
         // Función para confirmar eliminación
         function confirmarEliminacion(event, index) {
@@ -117,9 +131,6 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
             document.getElementById('modalImage').src = imageSrc;
             document.getElementById('imageModalLabel').textContent = description;
         }
-
-
-
     </script>
 </head>
 <body>
@@ -139,7 +150,6 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
                 <?php if ($isAdmin): ?>
                     <a href="informacion.html" class="btn btn-outline-primary">Como Utilizar la pagina siendo administrador?</a>
                 <?php endif; ?>
-
             </div>
         </div>
     </div>
@@ -154,8 +164,6 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
         <a href="agregarFoto.php" class="btn btn-dark">Agregar Foto</a>
     </div>
     <?php endif; ?>
-
-    <div class="my-5"></div>
 
     <!-- Mostrar imágenes desde el archivo JSON -->
     <div class="row mb-4">

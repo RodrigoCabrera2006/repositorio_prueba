@@ -10,64 +10,70 @@
     <link rel="icon" href="img/LogoChaca.png" type="image/x-icon">
 
     <style>
+        /* Flexbox aplicado al body */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;  /* Hace que el body ocupe toda la altura de la página */
+            margin: 0;  /* Elimina el margen predeterminado */
+        }
+
+        /* El contenido principal ocupará todo el espacio disponible antes del footer */
+        .main-content {
+            flex: 1;
+        }
+
         label{
             font-size: 20px;
         }
         .custom-navbar {
-            background-color: #3498db; /* Cambia este valor por el color que desees */
+            background-color: #3498db;
         }
+
         input {
-            width: 50%;               /* Ocupa el ancho completo del contenedor */
-            padding: 6px 8px;          /* Espaciado interno más reducido */
-            margin: 5px 0 10px 0;      /* Menor margen entre los inputs */
-            border: 1px solid #ccc;     /* Borde gris claro */
-            border-radius: 4px;         /* Bordes ligeramente redondeados */
-            box-sizing: border-box;     /* Asegura que el padding esté incluido en el tamaño total del input */
-            font-size: 14px;            /* Tamaño de fuente más pequeño */
+            width: 50%;
+            padding: 6px 8px;
+            margin: 5px 0 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
         }
 
         button{
-            background-color: #4b4b4b; /* Color de fondo azul */
-            color: white;              /* Color de texto blanco */
-            padding: 10px 15px;       /* Espaciado interno */
-            border: none;              /* Sin borde */
-            border-radius: 4px;       /* Bordes redondeados */
-            cursor: pointer;           /* Cambia el cursor a mano al pasar el ratón */
-            font-size: 16px;          /* Tamaño de fuente */
-            transition: background-color 0.3s; /* Transición suave para el hover */
+            background-color: #4b4b4b;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
         }
+
         .custom-header{
             background-color: #6a1f1f;
             color: #c0c0c0;
         }
-        footer{
-            min-height: 70px;
+
+        footer {
             background-color: #6a1f1f;
-            color: #c0c0c0; 
-            position:absolute;
-            bottom:0%;
-            width:100%;
-            
+            color: #c0c0c0;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
         }
-        .d-flex{
-            background-color: #6a1f1f;
-        }
-        a {
-            background-color: #6a1f1f;
-        }
-        .container1{
+
+        .container1 {
             background-color: #6a1f1f;
         }
 
-
-        
     </style>
-
 </head>
 <body>
 
 <!-- Header -->
-<header class="custom-header py-3 ">
+<header class="custom-header py-3">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center">
             <!-- Logo -->
@@ -79,113 +85,79 @@
 </header>
 <!-- Fin Header -->
 
+<!-- Main Content -->
+<div class="main-content">
+    <div class="container">
+        <h1 style="text-align:center;">Zona de Registro</h1>
+    </div>
 
+    <div class="container my-5">
+        <div class="row d-flex justify-content-around" style="background-color: rgb(167, 167, 167);">
+            <!-- FORMULARIO 1 -->
+            <div class="col-md-5">
+                <form action="registrar.php" method="POST">
+                    <br>
+                    <center>
+                    <h1>Registrarse</h1>
+                    <br>
+                    <label>Nombre de Usuario:</label>
+                    <br>
+                    <input name="username" type="text" placeholder="Inserte su nombre" required>
+                    <br><br>
+                    <label>Contraseña:</label>
+                    <br>
+                    <input name="password" type="password" placeholder="contraseña" required>
+                    <br><br>
+                    <label>Confirmar la contraseña:</label>
+                    <br>
+                    <input name="confirm_password" type="password" placeholder="confirmar contraseña" required>
+                    <br>
+                    <button>Registrarme</button>
+                    </center>
+                    <br>
+                </form>
+            </div>
 
-
-        <div class="container"><h1 style="text-align:center;"> Zona de Registro </h1></div>
-
-
-
-          <div class="container my-5">
-            <div class="row d-flex justify-content-around" style="background-color: rgb(167, 167, 167);">
-                <!-- FORMULARIO 1 -->
-                <div class="col-md-5">
-                    <form action="registrar.php" method="POST"> <!-- Cambia la acción a registrar.php -->
-                        <br>
-                        <center>
-                        <h1> Registrarse</h1>
-                        <br>
-                        <label>Nombre de Usuario: </label>
-                        <br>
-                        <input name="username" type="text" placeholder="Inserte su nombre" required>
-                        <br>
-                        <br>
-                        <label>Contraseña: </label>
-                        <br>
-                        <input name="password" type="password" placeholder="contraseña" required>
-                        <br>
-                        <br>
-                        <label>Confirmar la contraseña: </label>
-                        <br>
-                        <input name="confirm_password" type="password" placeholder="confirmar contraseña" required>
-                        <br>
-                        <button>Registrarme</button>
-                        </center>
-                        <br>
-                    </form>
-                </div>
-
-        
-                <!-- FORMULARIO 2 -->
-                <div class="col-md-5">
-                    <form action="procesarLogin.php" method="POST">
-                        <br>
-                        <center>
-                        <h1> Iniciar Sesión</h1>
-                        <br>
-                        <label>Nombre de Usuario: </label>
-                        <br>
-                        <input name="username" type="text" placeholder="Inserte su nombre">
-                        <br>
-                        <br>
-                        <label>Contraseña: </label>
-                        <br>
-                        <input name="password" type="password" placeholder="Inserte su contraseña">
-                        <br>
-                        <button>Ingresar</button>
-                        </center>
-                        <br>
-                    </form>
-                </div>
+            <!-- FORMULARIO 2 -->
+            <div class="col-md-5">
+                <form action="procesarLogin.php" method="POST">
+                    <br>
+                    <center>
+                    <h1>Iniciar Sesión</h1>
+                    <br>
+                    <label>Nombre de Usuario:</label>
+                    <br>
+                    <input name="username" type="text" placeholder="Inserte su nombre">
+                    <br><br>
+                    <label>Contraseña:</label>
+                    <br>
+                    <input name="password" type="password" placeholder="Inserte su contraseña">
+                    <br>
+                    <button>Ingresar</button>
+                    </center>
+                    <br>
+                </form>
             </div>
         </div>
-        <br>
-        <br>
-        <br>
-        
-
-
-<!--
-<h3>Iniciar Sesion Admin</h3>
-<form action="procesarLogin.php" method="POST">
-    <div class="mb-3">
-        <label for="username" class="form-label">Nombre de Usuario</label>
-        <input type="text" class="form-control" id="username" name="username" required>
     </div>
-    <div class="mb-3">
-        <label for="password" class="form-label">Contraseña</label>
-        <input type="password" class="form-control" id="password" name="password" required>
-    </div>
-    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-</form>
--->
+</div>
+<!-- Fin Main Content -->
 
-
-
-
-
-
-
-
-
-
-            <!-- Footer -->
-    <footer class="text-center py-4">
-        <div class="container">
-            <h5>¡Seguinos en Instagram!</h5>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/tecnica6moron_oficial/?hl=es" class="text-white mx-2" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-            <br>
-        
-            <hr class="my-4" />
-            <br>
-            <p>Contacto: <a href="mailto:example123@gmail.com" class="text-white">example123@gmail.com</a></p>
-            <p>&copy; 2024 Coop Design. Todos los derechos reservados.</p>
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <h5>¡Seguinos en Instagram!</h5>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/tecnica6moron_oficial/?hl=es" class="text-white mx-2" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
         </div>
-    </footer>
-    <!-- Fin Footer -->
+        <hr class="my-4">
+        <p>Contacto: <a href="mailto:example123@gmail.com" class="text-white">example123@gmail.com</a></p>
+        <p>&copy; 2024 Coop Design. Todos los derechos reservados.</p>
+    </div>
+</footer>
+<!-- Fin Footer -->
+
 </body>
 </html>
