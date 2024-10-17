@@ -17,25 +17,26 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
 </head>
 <body>
     <div class="container">
-        <h1 class="my-4">Crear Nueva Noticia</h1>
+        <h1 class="my-4" style="text-decoration: underline;">Crear Nueva Noticia</h1>
         <form action="guardarNoticia.php" method="POST" enctype="multipart/form-data">
     <div class="mb-3">
-        <label for="titulo" class="form-label">Título</label>
+        <label for="titulo" class="form-label" style="text-decoration: underline;">Título</label>
         <input type="text" class="form-control" id="titulo" name="titulo" required>
     </div>
     <div class="mb-3">
-        <label for="descripcion" class="form-label">Descripción Breve</label>
+        <label for="descripcion" class="form-label" style="text-decoration: underline;">Descripción Breve</label>
         <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
     </div>
     <div class="mb-3">
-        <label for="detalles" class="form-label">Descripción Detallada</label>
+        <label for="detalles" class="form-label" style="text-decoration: underline;">Descripción Detallada</label>
         <textarea class="form-control" id="detalles" name="detalles" rows="5"></textarea>
     </div>
     <div class="mb-3">
-        <label for="imagen" class="form-label">Imagen (opcional)</label>
+        <label for="imagen" class="form-label" style="text-decoration: underline;">Imagen (opcional)</label>
         <input type="file" class="form-control" id="imagen" name="imagen">
     </div>
     <button type="submit" class="btn btn-primary">Publicar Noticia</button>
+    <a type="button" class="btn btn-danger" href="paginaPrincipal.php">Volver</a>
 </form>
 
     </div>

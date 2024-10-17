@@ -112,6 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        <a type="submit" class="btn btn-danger" href="paginaPrincipal.php">Volver</a>
     </form>
 </div>
 

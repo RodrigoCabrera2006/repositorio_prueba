@@ -38,6 +38,24 @@ $noticia = $noticias[$index];
     max-width: 100%;      /* Asegura que la imagen no exceda el contenedor */
     height: auto;         /* Mantiene la proporción */
 }
+ .custom-header{
+            background-color: #6a1f1f;
+            color: #c0c0c0;
+        }
+        footer{
+            background-color: #6a1f1f;
+            color: #c0c0c0
+        }
+        .d-flex{
+            background-color: #6a1f1f;
+        }
+        a {
+            background-color: #6a1f1f;
+        }
+        .container1{
+            background-color: #6a1f1f;
+        }
+
 
 
     </style>
@@ -45,7 +63,7 @@ $noticia = $noticias[$index];
 <body>
 
 <!-- Header -->
-<header class="custom-header text-dark py-3 bg-light">
+<header class="custom-header py-3">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center">
             <!-- Logo -->
@@ -55,7 +73,7 @@ $noticia = $noticias[$index];
 
             <!-- Botones minimalistas para Home, Galería e Iniciar sesión -->
             <div class="d-flex">
-                <a href="paginaPrincipal.php" class="btn btn-outline-dark me-2">Volver</a>
+                <a href="paginaPrincipal.php" class="btn btn-outline-light me-2">Volver</a>
             </div>
         </div>
     </div>
@@ -81,7 +99,7 @@ $noticia = $noticias[$index];
 </div>
 
 <!-- Footer -->
-<footer class="bg-dark text-white text-center py-4">
+<footer class="text-center py-4">
     <div class="container">
         <h5>¡Seguinos en Instagram!</h5>
         <div class="social-icons">

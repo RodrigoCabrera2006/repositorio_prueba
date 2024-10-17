@@ -78,6 +78,29 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
             max-height: 100%;
             object-fit: cover;
         }
+         .custom-header{
+            background-color: #6a1f1f;
+            color: #c0c0c0;
+        }
+        footer{
+            min-height: 70px;
+            background-color: #6a1f1f;
+            color: #c0c0c0; 
+            position:fixed;
+            bottom:0%;
+            width:100%;
+            
+        }
+        .d-flex{
+            background-color: #6a1f1f;
+        }
+        a {
+            background-color: #6a1f1f;
+        }
+        .container1{
+            background-color: #6a1f1f;
+        }
+
     </style>
     
     <script>
@@ -102,14 +125,14 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
 <body>
 
 <!-- Header -->
-<header class="custom-header text-dark py-3 bg-light">
+<header class="custom-header py-3">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center">
             <a class="navbar-brand" href="paginaPrincipal.php">
                 <h1 class="m-0">Coop Design</h1>
             </a>
             <div class="d-flex">
-                <a href="paginaPrincipal.php" class="btn btn-outline-dark me-2">Página Principal</a>
+                <a href="paginaPrincipal.php" class="btn btn-outline-light me-2">Página Principal</a>
                 <?php if (isset($_SESSION['role'])): ?>
                     <a href="cerrarSesion.php" class="btn btn-outline-danger me-2">Cerrar Sesión</a>
                 <?php endif; ?>
@@ -180,7 +203,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
 </div>
 
 <!-- Footer -->
-<footer class="bg-dark text-white text-center py-4">
+<footer class="text-center py-4">
     <div class="container">
         <h5>¡Seguinos en Instagram!</h5>
         <div class="social-icons">
