@@ -86,7 +86,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
             min-height: 70px;
             background-color: #6a1f1f;
             color: #c0c0c0; 
-            position:fixed;
+            position:absolute;
             bottom:0%;
             width:100%;
             
