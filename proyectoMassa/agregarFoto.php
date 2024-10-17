@@ -14,6 +14,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Foto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="img/LogoChaca.png" type="image/x-icon">
 </head>
 <body>
@@ -50,8 +51,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     </form>
 </div>
 
-<!-- Footer -->
-<footer class="bg-dark text-white text-center py-4">
+<footer style="background-color: #6a1f1f; color: #c0c0c0;" class="text-center py-4">
     <div class="container">
         <h5>¡Seguinos en Instagram!</h5>
         <div class="social-icons">
@@ -59,12 +59,12 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
                 <i class="fab fa-instagram"></i>
             </a>
         </div>
-        <hr class="my-4" />
+        <hr class="my-4" style="border-color: #c0c0c0;" />
         <p>Contacto: <a href="mailto:example123@gmail.com" class="text-white">example123@gmail.com</a></p>
         <p>&copy; 2024 Coop Design. Todos los derechos reservados.</p>
     </div>
 </footer>
-<!-- Fin Footer -->
+
 
 </body>
 </html>

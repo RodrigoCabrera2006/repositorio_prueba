@@ -1,26 +1,44 @@
 [
     {
-        "titulo": "Ba\u00f1os Nuevos!",
-        "descripcion": "Ba\u00f1os nuevos en la chacabuco",
-        "detalles": "Los ba\u00f1os ya se arreglaron gracias a los aportes de todo el personal estudiantil",
+        "titulo": "Nuevo Taller de Rob\u00f3tica para Estudiantes de 4to y 5to A\u00f1o",
+        "descripcion": "La escuela ha implementado un nuevo taller de rob\u00f3tica para los estudiantes de los \u00faltimos a\u00f1os",
+        "detalles": "El pasado lunes se inaugur\u00f3 el Taller de Rob\u00f3tica en la Secundaria T\u00e9cnica N\u00b06, dirigido a los alumnos de 4to y 5to a\u00f1o. Este espacio fue creado con el objetivo de ofrecer una experiencia pr\u00e1ctica y educativa sobre rob\u00f3tica, programaci\u00f3n, y electr\u00f3nica. Durante el primer trimestre, los estudiantes estar\u00e1n dise\u00f1ando y construyendo robots funcionales para competir en un torneo interno al final del a\u00f1o. La escuela espera que este taller incentive el inter\u00e9s en las carreras de tecnolog\u00eda e ingenier\u00eda, preparando a los j\u00f3venes para los desaf\u00edos del futuro laboral.",
+        "imagen": "uploads\/Imagen de WhatsApp 2024-10-15 a las 20.38.17_25f69093.jpg"
+    },
+    {
+        "titulo": "Nueva aula con Equipos para informatica y programacion",
+        "descripcion": "La escuela ha inaugurado una nueva sala de computaci\u00f3n con 30 equipos de computo",
+        "detalles": "Gracias a un subsidio del Ministerio de Educaci\u00f3n, la Secundaria T\u00e9cnica N\u00b06 ha renovado por completo su sala de computaci\u00f3n. Con 30 nuevas computadoras equipadas con procesadores de alta capacidad y monitores nuevos, los estudiantes ahora podr\u00e1n acceder a herramientas tecnol\u00f3gicas avanzadas. Adem\u00e1s, la escuela implementar\u00e1 un nuevo plan de estudios que incluir\u00e1 lenguajes de programaci\u00f3n como Python y JavaScript. \"Estamos muy emocionados por esta renovaci\u00f3n, ya que permitir\u00e1 a nuestros estudiantes estar mejor preparados para el mundo laboral y acad\u00e9mico\", coment\u00f3 el director del establecimiento.",
         "imagen": ""
     },
     {
-        "titulo": "Nuevos Juegos en Educacion Fisica!",
-        "descripcion": "Anunciamos los nuevos eventos de educacion Fisica",
-        "detalles": "Han comenzado los eventos anuales de educacion fisica, los mismos empiezan desde 10:00hs a 12:00hs.\r\nPara anotarse lo que deben hacer es acercarse a cooperadora para retirar el papel de inscripcion y entregarlo a su profesor designado en el tiempo que el mismo indique.",
+        "titulo": "Gran \u00c9xito en el Torneo Anual de Educaci\u00f3n F\u00edsica",
+        "descripcion": "Los estudiantes participaron con gran entusiasmo en el Torneo Anual de Educaci\u00f3n F\u00edsica, demostrando habilidades en deportes y trabajo en equipo.",
+        "detalles": "La Secundaria T\u00e9cnica N\u00b06 celebr\u00f3 la edici\u00f3n 2024 de su tradicional Torneo Anual de Educaci\u00f3n F\u00edsica, con la participaci\u00f3n de estudiantes de todos los niveles. Este evento, que busca fomentar el deporte y la vida saludable, incluy\u00f3 competencias en distintas disciplinas como atletismo, f\u00fatbol, v\u00f3ley y b\u00e1squet. Este a\u00f1o, la gran sorpresa fue la competencia de relevos, donde los alumnos de 4to a\u00f1o demostraron gran velocidad y coordinaci\u00f3n, llev\u00e1ndose el primer puesto en la categor\u00eda de atletismo.",
         "imagen": ""
     },
     {
-        "titulo": "asdas",
-        "descripcion": "assdasd",
-        "detalles": "asdasd",
+        "titulo": "Visita a la Planta Automotriz: Alumnos de 6to A\u00f1o en el Mundo Real",
+        "descripcion": "Los estudiantes de 6to a\u00f1o participaron en una visita guiada a una planta automotriz, observando los procesos de producci\u00f3n de primera mano.",
+        "detalles": "Como parte del programa de pasant\u00edas, los estudiantes de 6to a\u00f1o de la especialidad de Automotriz visitaron la planta de producci\u00f3n de la empresa Ford. Durante el recorrido, los alumnos tuvieron la oportunidad de observar las distintas etapas de ensamblaje de los veh\u00edculos, desde el dise\u00f1o inicial hasta la fabricaci\u00f3n final. Adem\u00e1s, participaron en una charla con ingenieros de la planta, quienes les explicaron las innovaciones tecnol\u00f3gicas que est\u00e1n implementando en los autos de \u00faltima generaci\u00f3n. Los estudiantes quedaron impresionados con la experiencia y comentaron que la visita les dio una perspectiva clara de c\u00f3mo aplicar los conocimientos adquiridos en el aula.",
+        "imagen": "uploads\/rkf-HvgVg_1200x0.jpg"
+    },
+    {
+        "titulo": "Expo Chaca: Proyectos de Innovaci\u00f3n y Energ\u00edas\u00a0Renovables",
+        "descripcion": "Los estudiantes presentaron sus proyectos en la expo chacabuco, centrados en soluciones para un mundo\u00a0m\u00e1s\u00a0sostenible.",
+        "detalles": "Este a\u00f1o, la expo chaca de la Secundaria T\u00e9cnica N\u00b06 tuvo como tem\u00e1tica principal las energ\u00edas renovables y la innovaci\u00f3n tecnol\u00f3gica. Los alumnos de diversos cursos presentaron proyectos que iban desde sistemas solares automatizados hasta molinos e\u00f3licos caseros. El proyecto destacado fue el de un grupo de estudiantes de 6to a\u00f1o que desarroll\u00f3 un prototipo de casa autosuficiente en energ\u00eda, utilizando paneles solares reciclados y bater\u00edas hechas de materiales reutilizables. La comunidad educativa aplaudi\u00f3 el esfuerzo de los estudiantes por integrar soluciones sustentables en sus proyectos, destacando la importancia de estas tecnolog\u00edas en el futuro\u00a0del\u00a0pa\u00eds.",
         "imagen": ""
     },
     {
-        "titulo": "adeead",
-        "descripcion": "adaed",
-        "detalles": "daedae",
+        "titulo": "Cierre Temporal del Patio por Barro Tras las Lluvias",
+        "descripcion": "Debido al mal estado del patio de tierra causado por las intensas lluvias, se suspender\u00e1n las clases de Educaci\u00f3n F\u00edsica durante el d\u00eda de hoy.",
+        "detalles": "Las fuertes lluvias de los \u00faltimos d\u00edas han dejado el patio de tierra de la Secundaria T\u00e9cnica N\u00b06 intransitable, con grandes charcos de barro que imposibilitan el uso seguro del espacio para las actividades f\u00edsicas. Por esta raz\u00f3n, la direcci\u00f3n de la escuela ha decidido cerrar temporalmente el acceso al patio y suspender las clases de Educaci\u00f3n F\u00edsica programadas para hoy, hasta nuevo aviso.\r\n\r\nSe recuerda a los estudiantes que permanezcan atentos a los comunicados oficiales para conocer la nueva fecha de apertura del patio y el reinicio de las actividades deportivas.",
+        "imagen": "uploads\/Imagen de WhatsApp 2024-10-15 a las 18.39.34_f7e17797.jpg"
+    },
+    {
+        "titulo": "Apertura de Mesas de Ex\u00e1menes para Materias Previas el 24 de Octubre",
+        "descripcion": "Se habilitan las mesas de ex\u00e1menes para aquellos estudiantes que adeudan materias de ciclos anteriores. Las inscripciones estar\u00e1n disponibles a partir de esta semana.",
+        "detalles": "La Secretar\u00eda Acad\u00e9mica informa a los estudiantes que deban materias de a\u00f1os previos que las mesas de ex\u00e1menes extraordinarias se llevar\u00e1n a cabo el pr\u00f3ximo 24 de octubre. Esta oportunidad est\u00e1 dirigida exclusivamente a quienes tengan asignaturas pendientes de acreditaci\u00f3n de ciclos anteriores.\r\n\r\nEl proceso de inscripci\u00f3n estar\u00e1 disponible a partir de esta semana en la preceptor\u00eda del establecimiento. Los interesados deben presentarse con su libreta de calificaciones y DNI para formalizar la inscripci\u00f3n.",
         "imagen": ""
     }
 ]
