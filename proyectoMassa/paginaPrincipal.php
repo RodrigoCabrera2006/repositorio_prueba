@@ -73,6 +73,7 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
                 <h1 class="m-0">Coop Design</h1>
             </a>
             <div class="d-flex">
+                <a href="fotoAlumnosEgresados.php" class="btn btn-info me-2">Galeria De Egresados</a>
                 <a href="galeria.php" class="btn btn-light me-2">Galería</a>
                 <?php if (isset($_SESSION['role'])): ?>
                     <a href="cerrarSesion.php" class="btn btn-danger me-2">Cerrar Sesión</a>

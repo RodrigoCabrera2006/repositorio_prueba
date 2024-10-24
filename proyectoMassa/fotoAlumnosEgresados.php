@@ -11,17 +11,18 @@ $galeria = file_exists($jsonFile) ? json_decode(file_get_contents($jsonFile), tr
 $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
 ?>
 
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Imágenes</title>
+    <title>Alumnos Egresados</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="img/LogoChaca.png" type="image/x-icon">
-    
+
     <style>
         html, body {
             height: 100%;
@@ -78,6 +79,43 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
             opacity: 1;
         }
 
+        p{
+            font-size:30px;
+            text-align:center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Alinear el texto "Filtrar por" a la izquierda */
+            margin-bottom: 10px;
+        }
+
+        form label {
+            font-size: 18px; /* Tamaño de fuente para "Filtrar por" */
+            margin-bottom: 1px; /* Espacio entre "Filtrar por" y los botones */
+        }
+
+        form .button-group {
+            display: flex;
+            gap: 10px; /* Espacio entre los botones */
+        }
+
+        form button {
+            padding: 5px 20px; /* Espacio interno del botón */
+            background-color: #AE0000; /* Fondo del botón */
+            color: white; /* Texto en blanco */
+            border: none; /* Sin bordes */
+            border-radius: 5px; /* Bordes redondeados */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #8b0000; /* Color más oscuro al pasar el mouse */
+        }
+
+
         .overlay h2 {
             color: white;
             font-size: 24px;
@@ -132,84 +170,90 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
             document.getElementById('imageModalLabel').textContent = description;
         }
     </script>
+
+
 </head>
 <body>
-
-<!-- Header -->
-<header class="custom-header py-3">
-    <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
-            <a class="navbar-brand" href="paginaPrincipal.php">
-                <h1 class="m-0">Coop Design</h1>
-            </a>
-            <div class="d-flex">
-                <a href="fotoAlumnosEgresados.php" class="btn btn-info me-2">Galeria De Egresados</a>
-                <a href="paginaPrincipal.php" class="btn btn-light me-2">Página Principal</a>
-                <?php if (isset($_SESSION['role'])): ?>
-                    <a href="cerrarSesion.php" class="btn btn-danger me-2">Cerrar Sesión</a>
-                <?php endif; ?>
-                <?php if ($isAdmin): ?>
-                    <a href="informacion.html" class="btn btn-primary">Como Utilizar la pagina siendo administrador?</a>
-                <?php endif; ?>
+    <!-- Header -->
+    <header class="custom-header py-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a class="navbar-brand" href="paginaPrincipal.php">
+                    <h1 class="m-0">Coop Design</h1>
+                </a>
+                <div class="d-flex">
+                    <a href="paginaPrincipal.php" class="btn btn-light me-2">Página Principal</a>
+                    <?php if (isset($_SESSION['role'])): ?>
+                        <a href="cerrarSesion.php" class="btn btn-danger me-2">Cerrar Sesión</a>
+                    <?php endif; ?>
+                    <?php if ($isAdmin): ?>
+                        <a href="informacion.html" class="btn btn-primary">Como Utilizar la pagina siendo administrador?</a>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
-    </div>
-</header>
-<!-- Fin Header -->
+    </header>
+    <!-- Fin Header -->
+
+
+
 
 <div class="container">
+<h1 class="my-4 text-center">Galeria de Fotos De Alumnos Ya Egresados</h1>
+<?php if ($isAdmin): ?>
+    <p> En este apartado puede encontrar las fotos de los Egresados de años anteriores </p>
+<div class="text-center mb-3">
+    <a href="agregarFoto.php" class="btn btn-dark">Agregar Foto</a>
+</div>
+<?php endif; ?>
 
-    <h1 class="my-4 text-center">Galería de Fotos de Cooperadora</h1>
-    <?php if ($isAdmin): ?>
-    <div class="text-center mb-3">
-        <a href="agregarFoto.php" class="btn btn-dark">Agregar Foto</a>
+<form method="POST">
+    <label>Filtrar Por:</label> 
+    <div class="button-group">
+        <button>Nombre</button>
+        <button>Apellido</button>
+        <button>Año de Egreso</button>
+        <button>Division</button>
     </div>
-    <?php endif; ?>
+</form>
 
-    <!-- Mostrar imágenes desde el archivo JSON -->
-    <div class="row mb-4">
-        <?php foreach ($galeria as $index => $foto): ?>
-            <div class="col-md-4">
-                <div class="hovereffect">
-                    <img 
-                        src="<?php echo $foto['imagen']; ?>" 
-                        class="img-fluid" 
-                        alt="<?php echo $foto['descripcion']; ?>" 
-                        data-bs-toggle="modal" 
-                        data-bs-target="#imageModal"
-                        onclick="setModalImage('<?php echo $foto['imagen']; ?>', '<?php echo $foto['descripcion']; ?>')"
-                        style="object-fit: contain;"
-                    >
-                    <div class="overlay">
-                        <h2><?php echo $foto['descripcion']; ?></h2>
-                    </div>
+
+<!-- Mostrar imágenes desde el archivo JSON -->
+<div class="row mb-4">
+    <?php foreach ($galeria as $index => $foto): ?>
+        <div class="col-md-4">
+            <div class="hovereffect">
+                <img 
+                    src="<?php echo $foto['imagen']; ?>" 
+                    class="img-fluid" 
+                    alt="<?php echo $foto['descripcion']; ?>" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#imageModal"
+                    onclick="setModalImage('<?php echo $foto['imagen']; ?>', '<?php echo $foto['descripcion']; ?>')"
+                    style="object-fit: contain;"
+                >
+                <div class="overlay">
+                    <h2><?php echo $foto['descripcion']; ?></h2>
                 </div>
-                <?php if ($isAdmin): ?>
-                    <a href="editarFoto.php?index=<?php echo $index; ?>" class="btn btn-warning mt-2">Editar Foto</a>
-                    <form id="form-eliminar-<?php echo $index; ?>" action="eliminarFoto.php" method="POST" style="display:inline;">
-                        <input type="hidden" name="index" value="<?php echo $index; ?>">
-                        <button type="button" class="btn btn-danger mt-2" onclick="confirmarEliminacion(event, <?php echo $index; ?>)">Eliminar Foto</button>
-                    </form>
-                <?php endif; ?>
             </div>
-        <?php endforeach; ?>
-    </div>
+            <?php if ($isAdmin): ?>
+                <a href="editarFoto.php?index=<?php echo $index; ?>" class="btn btn-warning mt-2">Editar Foto</a>
+                <form id="form-eliminar-<?php echo $index; ?>" action="eliminarFoto.php" method="POST" style="display:inline;">
+                    <input type="hidden" name="index" value="<?php echo $index; ?>">
+                    <button type="button" class="btn btn-danger mt-2" onclick="confirmarEliminacion(event, <?php echo $index; ?>)">Eliminar Foto</button>
+                </form>
+            <?php endif; ?>
+        </div>
+    <?php endforeach; ?>
+</div>
 </div>
 
-<!-- Modal para ampliar la imagen -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="imageModalLabel">Imagen Ampliada</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <img id="modalImage" src="" class="img-fluid" alt="">
-            </div>
-        </div>
-    </div>
-</div>
+
+
+
+
+
+
 
 <!-- Footer -->
 <footer class="text-center py-4">
@@ -226,5 +270,6 @@ $isAdmin = isset($_SESSION['role']) && $_SESSION['role'] === 'admin';
     </div>
 </footer>
 
+    
 </body>
 </html>
